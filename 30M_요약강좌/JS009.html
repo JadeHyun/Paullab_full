@@ -8,9 +8,45 @@
 </head>
 <body>
     <script>
-        var l = [10, 20, 30, 40];
+        var l = [10, 20, 30, 40, 50];
         document.write(l[2]);
         document.write('<br>')
+
+        var 배열 = [10, 20, 30, 40, 50];
+        document.write(배열[0]);
+        document.write('<br>');
+        document.write(배열[1]);
+        document.write('<br>');
+        document.write(배열.slice(1,4));
+        document.write('<br>');
+        document.write(배열.pop());
+        document.write('<br>');
+        document.write(배열);
+        document.write('<br>');
+        배열.push(1000)
+        document.write(배열);
+        document.write('<br>');
+        document.write(배열.join('!!'));
+        document.write('<br>');
+        document.write(typeof(배열.join('!!')));
+        document.write('<br>');
+        배열.sort(); // 사전식 정렬이다. 1000이 큰 숫자여도 문자열로 보고 정리를 한다.
+        document.write(배열);
+        document.write('<br>');
+        배열.reverse() // 사전식 정렬이 아닌!! 그냥 뒤집어서 반환하는 배열이다.
+        document.write(배열);
+        document.write('<br>');
+        배열.reverse()
+        document.write(배열);
+        document.write('<br>');
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>

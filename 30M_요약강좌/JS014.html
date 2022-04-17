@@ -8,13 +8,26 @@
 </head>
 <body>
     <script>
-        var i = 10
+        // 블록 스코프 : 하나의 덩어리로 생각하면 좋다. 블록 레벨 요소안에서만 효력이 있다고 생각하면 될듯. ( let, const)
+        // 예를 들면,,, 지금 let k 는 document.write 와 같은 블록 선상에 있기 때문에 작동을 함.
+        // => let이나 const 는 하나의 블록이다. 해당 블록을 지나가면 더 이상 효력을 발휘하지 못한다. 
+
+        // 함수 스코프 : var => 함수 안에 var 로 선언된 변수는 함수를 벗어나는 순간 실행이 안된다. (단, 밖에서 안으로는 가능)
+        // const 는 주로 상수같은 것을 정의 할때 사용한다. 
+        // 그렇다면 var 는 언제 실행이 안될까? == function 은 안된다. 
+        var i = 10; // var 는 기본적으로 function 스코프를 갖게 된다. 
+        let k = 10000; // let 과 const 는 block 스코프를 갖게 된다.
         if(i>5){
-            var j = 100;
+            const j = 100;
         }else{
-            var j = 1000;
+            const j = 1000;
+        };
+        function f(){
+             i += 100000;
         }
-        document.write(j)
+        f()
+        document.write(i);
+        // document.write(j)
     </script>
 </body>
 </html>

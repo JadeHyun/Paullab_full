@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="one">hello world</h1>
+    <button id="two" >Click</button>
+    <p>반갑습니다</p>
+    <!-- jQuery 는 
+        1. 엘리먼트를 선택할 수 있는 강력한 방법
+        2. 선택된 엘리먼트를 효율적으로 제어할 수 있는 방법  -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+
+    <script>
+        // function f() {
+        //     $('#one').html('반가습니다~~!!!')
+        //     document.getElementById('one').style.backgroundColor = 'red';
+        // }
+
+        $('#two').click(
+            function f(){
+                $('p').html('반가습니다~~!!!')
+                document.querySelector('p').style.backgroundColor = 'red';
+            }
+        )
+    </script>
+
+</body>
+
+</html>

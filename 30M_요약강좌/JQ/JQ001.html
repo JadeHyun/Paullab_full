@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .border {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
     <h1>hello world</h1>
     <p id="test">hello hello</p>
@@ -26,21 +33,53 @@
     <p id="userInputPrint"></p>
     <button>Click!</button>
 
+    <div class="wrapper">
+        <h1 class="title">TITLE</h1>
+        <ul class="items">
+            <li class="items">item 1</li>
+            <li class="items">item 2</li>
+        </ul>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $('#test').html('<b>hello</b> world');
-        $("li").eq(3).css("color", "red" );
+        $("li").eq(3).css("color", "red");
         // $("li:gt(3)").css( "color", "blue");
         // $("li:lt(6)").css( "color", "yellow");
-        $("li:nth-child(2n)").css( "color", "blue");
+        $("li:nth-child(2n)").css("color", "blue");
 
-        $('button').click(function(){
+        $('button').click(function () {
             const value = $('#userInput').val();
             $('userInput2').val(value);
             $('#userInputPrint').text(value);
-        })
+        });
+
+        // $("ul").parent().append('one');
+        // $("div").children().append('two');
+        // $("div").first().text('three');
+
+        $("div").children()[0].innerText = 'hello world';
+        // $("div").append("Some appended text.");
+        $("div").prepend("Some appended text.");
+        // $("div").remove();
+
+        // append 는 같은 선상에 추가하는게 아닌 자식요소로 마지막에 넣게 된다.
+        // 첫번재로 넣고 싶으면 prepend 를 쓸 것. 
+        // remove 는 태그 자체를 삭제시켜버림.
+
+        $('ul').after('<h2>끝!</h2>');
+        $('ul').before('<h2>시작!</h2>');
+        // before & after 는 태그 안에 생기는게 아니라 태그 바로 위 혹은 아래에 생긴다.
+
+        $("ul").addClass("border");
+        // addClass 는 페이지 전체에 영향을 준다. ( 몇개가 있든 상관없이. )
+
+        $("ul").fadeOut(3000).fadeIn(3000);
+
 
 
     </script>
 </body>
+
 </html>
